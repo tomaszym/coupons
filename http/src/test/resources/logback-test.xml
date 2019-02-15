@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true">
+    <appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <charset>UTF-8</charset>
+            <Pattern>%d %-4relative {%X{sourceActorSystem}} [%X{akkaSource}] %-5level %logger{35} - %msg%n</Pattern>
+        </encoder>
+    </appender>
+    <logger name="akka.event.slf4j" level="WARN"/>
+    <logger name="org.http4s" level="WARN"/>
+
+    <root level="WARN">
+        <appender-ref ref="consoleAppender" />
+    </root>
+</configuration>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <charset>UTF-8</charset>
+            <Pattern>%d %-5level %logger{35} /%msg%n</Pattern>
+        </encoder>
+    </appender>
+
+    <!--<appender name="stash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">-->
+        <!--<destination>${LOGSTASH_HOST}:${LOGSTASH_PORT}</destination>-->
+        <!--<encoder class="net.logstash.logback.encoder.LogstashEncoder" />-->
+    <!--</appender>-->
+
+    <!--<appender name="ASYNCFILE" class="ch.qos.logback.classic.AsyncAppender">-->
+        <!--<appender class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+            <!--<file>/var/log/zombie/zombie.log</file>-->
+            <!--<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+                <!--&lt;!&ndash; daily rollover. Make sure the path matches the one in the file element or else-->
+                 <!--the rollover logs are placed in the working directory. &ndash;&gt;-->
+                <!--<fileNamePattern>/var/log/zombie/zombie_%d{yyyy-MM-dd}.%i.log</fileNamePattern>-->
+
+                <!--<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">-->
+                    <!--<maxFileSize>20MB</maxFileSize>-->
+                <!--</timeBasedFileNamingAndTriggeringPolicy>-->
+                <!--&lt;!&ndash; keep 30 days' worth of history &ndash;&gt;-->
+                <!--<maxHistory>15</maxHistory>-->
+            <!--</rollingPolicy>-->
+
+            <!--<encoder>-->
+                <!--<charset>UTF-8</charset>-->
+                <!--<pattern>%d %-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>-->
+            <!--</encoder>-->
+        <!--</appender>-->
+    <!--</appender>-->
+
+
+    <logger name="ch.qos.logback" level="WARN"/>
+    <logger name="com.typesafe.sslconfig" level="INFO"/>
+    <logger name="org.http4s" level="WARN"/>
+
+    <root level="${APP_LOGBACK_LEVEL:-INFO}">
+        <appender-ref ref="consoleAppender" />
+        <!--<appender-ref ref="stash" />-->
+        <!--<appender-ref ref="ASYNCFILE"/>-->
+    </root>
+</configuration>

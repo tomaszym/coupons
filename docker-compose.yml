@@ -1,0 +1,27 @@
+version: '3.1'
+
+services:
+
+#  leaderboard-http:
+#    image:
+#    network_mode: host
+#    environment:
+#    - CONFIG_LOGBACK_LEVEL=WARN
+#    - APP_POSTGRES_USER=coupons_app
+#    - APP_POSTGRES_PASSWORD=Id>ID
+#    - APP_POSTGRES_DB=coupons
+
+  db:
+    image: postgres:11.1
+    ports:
+    - 5432:5432
+    environment:
+      - POSTGRES_USER=coupons_app
+      - POSTGRES_PASSWORD=Id>ID
+      - POSTGRES_DB=coupons
+
+#  adminer:
+#    image: adminer
+#    restart: always
+#    ports:
+#    - 8080:8080
