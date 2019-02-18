@@ -12,13 +12,14 @@ lazy val commonSettings = Seq(
     "-unchecked", "-language:implicitConversions", "-language:postfixOps", "-Ypartial-unification", "-language:higherKinds"),
   javaOptions +="-Duser.timezone=GMT",
   libraryDependencies ++= Seq(
+    "com.chuusai" %% "shapeless" % "2.3.3",
     "com.typesafe" % "config" % "1.3.3",
     "com.github.pureconfig" %% "pureconfig" % pureConfigVersion,
     "com.github.pureconfig" %% "pureconfig-cats" % pureConfigVersion,
     "com.github.pureconfig" %% "pureconfig-cats-effect" % pureConfigVersion,
 
     "com.beachape" %% "enumeratum" % "1.5.13",
-
+    "com.beachape" %% "enumeratum-circe" % "1.5.20",
 
     "ch.qos.logback" % "logback-classic" % "1.2.3",
 //    "net.logstash.logback" % "logstash-logback-encoder" % "5.2",

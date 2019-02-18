@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
 
-#  leaderboard-http:
+#  coupons-http:
 #    image:
 #    network_mode: host
 #    environment:
@@ -12,16 +12,11 @@ services:
 #    - APP_POSTGRES_DB=coupons
 
   db:
-    image: postgres:11.1
+    build:
+      context: .
     ports:
     - 5432:5432
     environment:
       - POSTGRES_USER=coupons_app
       - POSTGRES_PASSWORD=Id>ID
       - POSTGRES_DB=coupons
-
-#  adminer:
-#    image: adminer
-#    restart: always
-#    ports:
-#    - 8080:8080

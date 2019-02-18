@@ -22,8 +22,6 @@ object LeaderboardAPIMain extends IOApp {
 
   def run(args: List[String]): IO[ExitCode] = {
 
-    println(DuelResult.withName("home_team_won"))
-
     for {
       config <- AppConfig.load
 

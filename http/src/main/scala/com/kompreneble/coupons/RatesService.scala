@@ -16,7 +16,7 @@ class RatesService[F[_]]()(implicit
   def rates(duels: Iterable[DuelId]): F[Map[DuelId, DuelRates]] = E.delay {
     duels.map { duel => duel -> {
       val r = new Random(duel.hashCode())
-      def randomRate = ((r.nextDouble() * 10).toInt.toDouble / 10) + r.nextInt(6)
+      def randomRate = ((r.nextDouble() * 10).toInt.toDouble / 10) + r.nextInt(5) +1
       val home = randomRate
       val tie = randomRate
       val away = randomRate

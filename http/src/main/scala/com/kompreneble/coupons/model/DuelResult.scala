@@ -5,7 +5,7 @@ import enumeratum._
 
 sealed trait DuelResult extends EnumEntry with Snakecase
 
-object DuelResult extends Enum[DuelResult] {
+object DuelResult extends Enum[DuelResult] with CirceEnum[DuelResult]{
 
   val values = findValues
 

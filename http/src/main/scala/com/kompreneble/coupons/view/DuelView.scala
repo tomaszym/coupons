@@ -1,10 +1,8 @@
 package com.kompreneble.coupons.view
 
-import java.time.LocalDateTime
-
 import cats.MonadError
 import cats.syntax.all._
-import com.kompreneble.coupons.errors.{DuelIdMismatch, TeamIdMismatch}
+import com.kompreneble.coupons.errors.DuelIdMismatch
 import com.kompreneble.coupons.model.{Duel, DuelRates}
 import com.kompreneble.coupons.{DuelId, TeamId}
 import io.circe.Encoder

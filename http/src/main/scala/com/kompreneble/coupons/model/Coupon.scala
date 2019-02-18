@@ -8,7 +8,7 @@ import cats.instances.double._
 case class Coupon(
   couponId: CouponId,
   userId: UserId,
-  bids: NonEmptyList[Bid]
+  bets: NonEmptyList[Bet]
 ) {
-  def rate: Double = bids.map(_.rate).combineAll
+  def rate: Double = bets.map(_.rate).combineAll
 }
